@@ -1,0 +1,13 @@
+ion-fab {
+    margin: 0;
+    padding: 0;
+    position: fixed; /* Asegúrate de que esté fijado */
+    bottom: 50px; /* Espacio desde la parte inferior */
+    right: 25px; /* Espacio desde el lado derecho */
+    z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
+  }
+
+  .white-icon {
+    color: rgb(236, 236, 236); /* Cambia el color a blanco */
+  }
+  

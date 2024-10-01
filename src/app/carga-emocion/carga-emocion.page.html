@@ -1,0 +1,39 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button> 
+    </ion-buttons>
+    <ion-title>Nueva Emocion</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <h1 class="titulo">¿Cómo te sientes hoy?</h1>
+  
+  <h2 class="subtitulo">
+    <ion-icon name="calendar-number-outline" class="calendar-icon"></ion-icon>
+    {{ fechaHoy }} 
+  </h2>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6" *ngFor="let emocion of emociones">
+        <ion-card 
+          (click)="seleccionarEmocion(emocion)" 
+          [ngClass]="{'selected': emocion.seleccionada}" 
+          class="emotion-card"
+        >
+          <ion-card-content class="card-content">
+            <h1 class="emotion-icon">{{ emocion.icon }}</h1>
+            <h2 class="texto">{{ emocion.texto }}</h2>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- Botón estándar que solo aparece después de seleccionar una emoción -->
+  <button *ngIf="emocionSeleccionada" class="guardar-emocion-btn" (click)="guardarEmocion()">
+    Guardar emoción
+  </button>
+</ion-content>
